@@ -31,7 +31,7 @@ public class AddNumbers {
         while (!isGoodChoiceLineNumber) {
             addLineNumber();
         }
-   // TODO sprawdzic czy miejsce jest puste, jesli nie to wywolac dodawanie jezcze raz
+ // TODO dodać sprawdzanie czy miejsce jest zajete
         while (!isGoodChoiceNumber) {
             addNumber();
         }
