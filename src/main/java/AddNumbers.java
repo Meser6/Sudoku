@@ -8,9 +8,11 @@ public class AddNumbers {
 
     boolean isGoodChoiceColumnNumber;
     boolean isGoodChoiceLineNumber;
+    boolean isAreaEmpty;
     boolean isGoodChoiceNumber;
 
     String wrongChoice = "Wrong choice. Please enter ones more";
+    String areaIsNotEmpty = "Your pole is't empty. Please choose other coordinates.";
 
     int[][] area = Areas.getArea();
 
@@ -25,24 +27,34 @@ public class AddNumbers {
     }
 
     private void addNumberIfIsCorrect() {
-        while (!isGoodChoiceColumnNumber) {
-            addColumnNumber();
+        while (!isAreaEmpty) {
+            while (!isGoodChoiceColumnNumber) {
+                addColumnNumber();
+            }
+            while (!isGoodChoiceLineNumber) {
+                addLineNumber();
+            }
+            if (area[columnNumber][lineNumber] == 0) {
+                isAreaEmpty = true;
+                isGoodChoiceColumnNumber = false;
+                isGoodChoiceLineNumber = false;
+            } else {
+                isGoodChoiceColumnNumber = false;
+                isGoodChoiceLineNumber = false;
+                System.out.println(areaIsNotEmpty);
+            }
         }
-        while (!isGoodChoiceLineNumber) {
-            addLineNumber();
-        }
- // TODO dodać sprawdzanie czy miejsce jest zajete
         while (!isGoodChoiceNumber) {
             addNumber();
+            isAreaEmpty = false;
         }
-        isGoodChoiceColumnNumber = false;
-        isGoodChoiceLineNumber = false;
         isGoodChoiceNumber = false;
     }
 
     private void addColumnNumber() {
         Scanner addNumber = new Scanner(System.in);
         try {
+            System.out.print("Column: ");
             int number = addNumber.nextInt();
 
             if (number >= 0 && number < 9) {
@@ -60,6 +72,7 @@ public class AddNumbers {
         Scanner addNumber = new Scanner(System.in);
 
         try {
+            System.out.print("Line: ");
             int number = addNumber.nextInt();
 
             if (number >= 0 && number < 9) {
@@ -78,6 +91,7 @@ public class AddNumbers {
         Scanner addNumber = new Scanner(System.in);
 
         try {
+            System.out.print("Number: ");
             int number = addNumber.nextInt();
 
             if (number > 0 && number < 10) {

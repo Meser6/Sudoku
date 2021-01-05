@@ -12,6 +12,8 @@ public class SudokuTheGame {
         Areas initialArea = new Areas();
         initialArea.getEmptyArea();
 
+
+
         AddNumbers addNumber = new AddNumbers();
         addNumber.addNumberToArea();
 

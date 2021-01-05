@@ -27,6 +27,7 @@ public class Greeting {
         String wrongChoiceMistakeChecker = "Wrong choice. Please chose ones more";
 
         Scanner mistakeCheckerScanner = new Scanner(System.in);
+        System.out.print("Automatically verification:  ");
         String mistakeCheckerChoice = mistakeCheckerScanner.nextLine().toLowerCase();
 
         switch (mistakeCheckerChoice) {
@@ -48,7 +49,7 @@ public class Greeting {
         greeting();
     }
 
-    public final boolean getMistakeChecker(){
+    public final boolean getMistakeChecker() {
         return mistakeChecker;
     }
 }

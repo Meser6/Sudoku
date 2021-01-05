@@ -21,7 +21,7 @@ public class Difficulty {
         String wrongChoiceDifficultyChecker = "Wrong choice. Please choice ones more";
 
         Scanner difficultyScanner = new Scanner(System.in);
-
+        System.out.print("Difficulty: ");
         String userDifficultyLevel = difficultyScanner.nextLine().toLowerCase();
 
         switch (userDifficultyLevel) {
