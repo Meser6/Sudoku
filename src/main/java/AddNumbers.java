@@ -16,18 +16,30 @@ public class AddNumbers {
 
     int[][] area = Areas.getArea();
 
+    int rounds;
+
+    void howManyRounds() {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (area[i][j] == 0) {
+                    rounds++;
+                }
+            }
+        }
+    }
 
     void addNumberToArea() {
-        for (int i = 0; i < 20; i++) { // TODO zmienic ta petle bo jest improwizowana
+        howManyRounds();
+        for (int i = 0; i < rounds; i++) {
             addNumberIfIsCorrect();
-            area[columnNumber][lineNumber] = userNumber;
+            area[lineNumber][columnNumber] = userNumber;
 
             Areas.printArea();
         }
     }
 
     private void addNumberIfIsCorrect() {
-        while (!isAreaEmpty) {
+        while (!isAreaEmpty) { // TODO sprawdzić czemu niektóre pola oznacza jako zajęte skoro są puste
             while (!isGoodChoiceColumnNumber) {
                 addColumnNumber();
             }

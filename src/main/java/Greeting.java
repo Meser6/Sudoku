@@ -13,9 +13,9 @@ public class Greeting {
         String mistakeCheckerText = "Do you want automatically mistake's verification (Y/N)";
 
         System.out.println("\n" + aboutMe);
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(1);
         System.out.println("\n" + welcomeToTheGameText + "\n");
-        TimeUnit.SECONDS.sleep(2);
+       TimeUnit.SECONDS.sleep(1);
         System.out.println(mistakeCheckerText);
 
         while (!mistakeCheckerScannerIsGoodChoice) {

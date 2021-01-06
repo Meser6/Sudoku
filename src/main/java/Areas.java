@@ -27,7 +27,7 @@ public class Areas {
 
         System.out.println(instructionUpperArea);
         printArea();
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(1);
         System.out.println(instructionDownerArea);
     }
 
