@@ -3,7 +3,8 @@ public class SudokuTheGame {
     public static void main(String[] args) throws InterruptedException {
         Greeting greeting = new Greeting();
         greeting.getGreeting();
-        // System.out.println("control: mistake checker = " + greeting.getMistakeChecker());
+        //   System.out.println("control: mistake checker = " + greeting.getMistakeChecker());
+
 
         Difficulty difficulty = new Difficulty();
         difficulty.getDifficulty();
@@ -11,7 +12,6 @@ public class SudokuTheGame {
 
         Areas initialArea = new Areas();
         initialArea.getEmptyArea();
-
 
 
         AddNumbers addNumber = new AddNumbers();

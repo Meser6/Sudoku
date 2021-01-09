@@ -7,8 +7,8 @@ public class Difficulty {
     private boolean difficultyLevelIsGoodChoice;
 
     private void difficulty() {
-        String difficultyChecker = "How difficulty of game do You want? \n   E - easy, \n   M - medium \n   H - hard " +
-                "\n   V - very hard";
+        String difficultyChecker = "How difficulty of game do You want?  \n VE - Very easy\n   E - easy, \n   M - medium \n   H - hard " +
+                "\n   VH - very hard";
 
         System.out.println(difficultyChecker);
 
@@ -25,20 +25,23 @@ public class Difficulty {
         String userDifficultyLevel = difficultyScanner.nextLine().toLowerCase();
 
         switch (userDifficultyLevel) {
-            case "e":
+            case "ve":
                 difficultyLevel = 1;
                 difficultyLevelIsGoodChoice = true;
-                break;
-            case "m":
+            case "e":
                 difficultyLevel = 2;
                 difficultyLevelIsGoodChoice = true;
                 break;
-            case "h":
+            case "m":
                 difficultyLevel = 3;
                 difficultyLevelIsGoodChoice = true;
                 break;
-            case "v":
+            case "h":
                 difficultyLevel = 4;
+                difficultyLevelIsGoodChoice = true;
+                break;
+            case "vh":
+                difficultyLevel = 5;
                 difficultyLevelIsGoodChoice = true;
                 break;
             default:

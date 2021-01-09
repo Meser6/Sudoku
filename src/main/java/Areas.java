@@ -7,13 +7,16 @@ public class Areas {
     static int difficulty = Difficulty.getDifficultyLevel();
 
     private static void emptyAreaWithDifficulty() {
-        if (difficulty == 1) {
+        if (difficulty == 1){
+            // TODO emptyAreaVeryEasyLevel();
+        }
+        else if (difficulty == 2) {
             emptyAreaEasyLevel();
-        } else if (difficulty == 2) {
-            emptyAreaMediumLevel();
         } else if (difficulty == 3) {
-            emptyAreaHardLevel();
+            emptyAreaMediumLevel();
         } else if (difficulty == 4) {
+            emptyAreaHardLevel();
+        } else if (difficulty == 5) {
             emptyAreaVeryHardLevel();
         }
     }
@@ -56,6 +59,13 @@ public class Areas {
             System.out.println();
         }
     }
+
+  /*private static void addEmptyArea(){
+        int
+        if (difficulty = 1)
+    }
+
+   */
 
     protected static void emptyAreaEasyLevel() {
         area[0][1] = 8;

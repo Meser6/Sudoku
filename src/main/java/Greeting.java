@@ -3,9 +3,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Greeting {
 
-
     private boolean mistakeCheckerScannerIsGoodChoice;
-    private boolean mistakeChecker;
+    public static boolean mistakeChecker;
 
     private void greeting() throws InterruptedException {
         String aboutMe = "Hi! I'm Kuba and I just started learn Java. It's my second game, so please be understanding :)";
@@ -27,7 +26,7 @@ public class Greeting {
         String wrongChoiceMistakeChecker = "Wrong choice. Please chose ones more";
 
         Scanner mistakeCheckerScanner = new Scanner(System.in);
-        System.out.print("Automatically verification:  ");
+        System.out.print("Automatically verification: ");
         String mistakeCheckerChoice = mistakeCheckerScanner.nextLine().toLowerCase();
 
         switch (mistakeCheckerChoice) {
@@ -47,9 +46,5 @@ public class Greeting {
 
     public void getGreeting() throws InterruptedException {
         greeting();
-    }
-
-    public final boolean getMistakeChecker() {
-        return mistakeChecker;
     }
 }

@@ -2,6 +2,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AddNumbers {
+
+    ErrorChecker errorChecker = new ErrorChecker();
+
     int columnNumber;
     int lineNumber;
     int userNumber;
@@ -10,6 +13,7 @@ public class AddNumbers {
     boolean isGoodChoiceLineNumber;
     boolean isAreaEmpty;
     boolean isGoodChoiceNumber;
+    boolean noRepetitions = errorChecker.everythingIsGood;
 
     String wrongChoice = "Wrong choice. Please enter ones more";
     String areaIsNotEmpty = "Your pole is't empty. Please choose other coordinates.";
@@ -18,7 +22,7 @@ public class AddNumbers {
 
     int rounds;
 
-    void howManyRounds() {
+    private void howManyRounds() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (area[i][j] == 0) {
@@ -28,17 +32,33 @@ public class AddNumbers {
         }
     }
 
+
     void addNumberToArea() {
         howManyRounds();
-        for (int i = 0; i < rounds; i++) {
-            addNumberIfIsCorrect();
-            area[lineNumber][columnNumber] = userNumber;
 
-            Areas.printArea();
+        for (int i = 0; i < rounds; i++) {
+            if (Greeting.mistakeChecker) {
+                while (!noRepetitions) {
+                    addNumberIfIsCorrectAndAreaIsEmpty();
+                    errorChecker.errorChecker(Greeting.mistakeChecker, lineNumber, columnNumber, area);
+                }
+                area[lineNumber][columnNumber] = userNumber;
+
+                Areas.printArea();
+            } else {
+                addNumberIfIsCorrectAndAreaIsEmpty();
+                area[lineNumber][columnNumber] = userNumber;
+
+                Areas.printArea();
+
+            }
         }
     }
 
-    private void addNumberIfIsCorrect() {
+
+
+
+    private void addNumberIfIsCorrectAndAreaIsEmpty() {
         while (!isAreaEmpty) { // TODO sprawdzić czemu niektóre pola oznacza jako zajęte skoro są puste
             while (!isGoodChoiceColumnNumber) {
                 addColumnNumber();
