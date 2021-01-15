@@ -5,15 +5,14 @@ public class AddNumbers {
 
     ErrorChecker errorChecker = new ErrorChecker();
 
-    int columnNumber;
     int lineNumber;
+    int columnNumber;
     int userNumber;
 
     boolean isGoodChoiceColumnNumber;
     boolean isGoodChoiceLineNumber;
     boolean isAreaEmpty;
     boolean isGoodChoiceNumber;
-    boolean noRepetitions = errorChecker.everythingIsGood;
 
     String wrongChoice = "Wrong choice. Please enter ones more";
     String areaIsNotEmpty = "Your pole is't empty. Please choose other coordinates.";
@@ -38,13 +37,13 @@ public class AddNumbers {
 
         for (int i = 0; i < rounds; i++) {
             if (Greeting.mistakeChecker) {
-                while (!noRepetitions) {
+                do {
                     addNumberIfIsCorrectAndAreaIsEmpty();
-                    errorChecker.errorChecker(Greeting.mistakeChecker, lineNumber, columnNumber, area);
-                }
+                    errorChecker.errorChecker(Greeting.mistakeChecker, lineNumber, columnNumber, userNumber, area);
+                } while (!errorChecker.everythingIsGood);
                 area[lineNumber][columnNumber] = userNumber;
-
                 Areas.printArea();
+                errorChecker.everythingIsGood = false;
             } else {
                 addNumberIfIsCorrectAndAreaIsEmpty();
                 area[lineNumber][columnNumber] = userNumber;
@@ -56,17 +55,15 @@ public class AddNumbers {
     }
 
 
-
-
     private void addNumberIfIsCorrectAndAreaIsEmpty() {
-        while (!isAreaEmpty) { // TODO sprawdzić czemu niektóre pola oznacza jako zajęte skoro są puste
+        while (!isAreaEmpty) {
             while (!isGoodChoiceColumnNumber) {
                 addColumnNumber();
             }
             while (!isGoodChoiceLineNumber) {
                 addLineNumber();
             }
-            if (area[columnNumber][lineNumber] == 0) {
+            if (area[lineNumber][columnNumber] == 0) {
                 isAreaEmpty = true;
                 isGoodChoiceColumnNumber = false;
                 isGoodChoiceLineNumber = false;
