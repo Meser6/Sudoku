@@ -4,21 +4,8 @@ public class Areas {
 
     private static int[][] area = new int[9][9];
 
-    static int difficulty = Difficulty.getDifficultyLevel();
-
     private static void emptyAreaWithDifficulty() {
-        if (difficulty == 1){
-            // TODO emptyAreaVeryEasyLevel();
-        }
-        else if (difficulty == 2) {
-            emptyAreaEasyLevel();
-        } else if (difficulty == 3) {
-            emptyAreaMediumLevel();
-        } else if (difficulty == 4) {
-            emptyAreaHardLevel();
-        } else if (difficulty == 5) {
-            emptyAreaVeryHardLevel();
-        }
+    AreaGenerator.areaGenerator(Difficulty.getDifficultyLevel(), area);
     }
 
     private static void emptyArea() throws InterruptedException {
@@ -59,13 +46,6 @@ public class Areas {
             System.out.println();
         }
     }
-
-  /*private static void addEmptyArea(){
-        int
-        if (difficulty = 1)
-    }
-
-   */
 
     protected static void emptyAreaEasyLevel() {
         area[0][1] = 8;

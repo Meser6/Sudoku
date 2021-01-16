@@ -4,19 +4,34 @@ import java.util.Set;
 public class ErrorChecker {
 
     public boolean everythingIsGood;
+    public boolean isEverythingIsGoodInAreasGenerator;
 
     String illegalMovement = "Illegal movement. Please select the number again";
 
-    public void errorChecker(boolean errorChecking, int lineNumber, int columnNumber, int userNumber, int[][] area) {
+    public void errorCheckerInGame(boolean errorChecking, int lineNumber, int columnNumber, int userNumber, int[][] area) {
         if (errorChecking) {
             if (checkLine(lineNumber, columnNumber, userNumber, area)
                     && checkColumn(lineNumber, columnNumber, userNumber, area)
                     && checkSquare(lineNumber, columnNumber, userNumber, area)) {
                 everythingIsGood = true;
-            } else{
+            } else {
                 System.out.println(illegalMovement);
             }
         }
+    }
+
+    public void errorCheckerInAreasGenerator(int lineNumber, int columnNumber, int number, int[][] area) {
+        if (checkLine(lineNumber, columnNumber, number, area)
+                && checkColumn(lineNumber, columnNumber, number, area)
+                && checkSquare(lineNumber, columnNumber, number, area)
+                && checkIsEmpty(lineNumber, columnNumber, area)) {
+            isEverythingIsGoodInAreasGenerator = true;
+        }
+    }
+
+    private boolean checkIsEmpty(int lineNumber, int columnNumber, int[][] area) {
+        return area[lineNumber][columnNumber] == 0;
+
     }
 
     private boolean checkLine(int line, int column, int number, int[][] area) {
@@ -80,8 +95,8 @@ public class ErrorChecker {
             firstColumnNumber = 6;
             lastColumnNumber = 8;
         }
-        for (int i = firstLineNumber; i < lastLineNumber +1; i++) {
-            for (int j = firstColumnNumber; j < lastColumnNumber +1; j++) {
+        for (int i = firstLineNumber; i < lastLineNumber + 1; i++) {
+            for (int j = firstColumnNumber; j < lastColumnNumber + 1; j++) {
                 if (area[i][j] == 0) {
                     amountOfEmptySpaces++;
                 } else {
@@ -91,6 +106,5 @@ public class ErrorChecker {
         }
         area[line][column] = 0;
         return amountOfEmptySpaces + squareSet.size() == 9;
-
     }
 }

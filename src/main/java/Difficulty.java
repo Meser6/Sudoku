@@ -26,22 +26,22 @@ public class Difficulty {
 
         switch (userDifficultyLevel) {
             case "ve":
-                difficultyLevel = 1;
+                difficultyLevel = 44;
                 difficultyLevelIsGoodChoice = true;
             case "e":
-                difficultyLevel = 2;
+                difficultyLevel = 37;
                 difficultyLevelIsGoodChoice = true;
                 break;
             case "m":
-                difficultyLevel = 3;
+                difficultyLevel = 30;
                 difficultyLevelIsGoodChoice = true;
                 break;
             case "h":
-                difficultyLevel = 4;
+                difficultyLevel = 25;
                 difficultyLevelIsGoodChoice = true;
                 break;
             case "vh":
-                difficultyLevel = 5;
+                difficultyLevel = 20;
                 difficultyLevelIsGoodChoice = true;
                 break;
             default:

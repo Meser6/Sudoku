@@ -39,7 +39,7 @@ public class AddNumbers {
             if (Greeting.mistakeChecker) {
                 do {
                     addNumberIfIsCorrectAndAreaIsEmpty();
-                    errorChecker.errorChecker(Greeting.mistakeChecker, lineNumber, columnNumber, userNumber, area);
+                    errorChecker.errorCheckerInGame(Greeting.mistakeChecker, lineNumber, columnNumber, userNumber, area);
                 } while (!errorChecker.everythingIsGood);
                 area[lineNumber][columnNumber] = userNumber;
                 Areas.printArea();
