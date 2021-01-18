@@ -20,6 +20,7 @@ public class AreaGenerator {
                 errorChecker.errorCheckerInAreasGenerator(randomLine, randomColumn, randomNumber, area);
                 if (errorChecker.isEverythingIsGoodInAreasGenerator) {
                     area[randomLine][randomColumn] = randomNumber;
+
                 }
             }
             errorChecker.isEverythingIsGoodInAreasGenerator = false;

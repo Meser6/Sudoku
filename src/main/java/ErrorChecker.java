@@ -29,8 +29,8 @@ public class ErrorChecker {
         }
     }
 
-    private boolean checkIsEmpty(int lineNumber, int columnNumber, int[][] area) {
-        return area[lineNumber][columnNumber] == 0;
+    private boolean checkIsEmpty(int lineNumber, int columnNumber, int[][] area) { //TODO
+        return area[lineNumber][columnNumber] != 0;
 
     }
 
