@@ -21,17 +21,16 @@ public class ErrorChecker {
     }
 
     public void errorCheckerInAreasGenerator(int lineNumber, int columnNumber, int number, int[][] area) {
-        if (checkLine(lineNumber, columnNumber, number, area)
+        if (checkIsEmpty(lineNumber, columnNumber, area)
+                && checkLine(lineNumber, columnNumber, number, area)
                 && checkColumn(lineNumber, columnNumber, number, area)
-                && checkSquare(lineNumber, columnNumber, number, area)
-                && checkIsEmpty(lineNumber, columnNumber, area)) {
+                && checkSquare(lineNumber, columnNumber, number, area)) {
             isEverythingIsGoodInAreasGenerator = true;
         }
     }
 
-    private boolean checkIsEmpty(int lineNumber, int columnNumber, int[][] area) { //TODO
-        return area[lineNumber][columnNumber] != 0;
-
+    private boolean checkIsEmpty(int line, int column, int[][] area) {
+        return area[line][column] == 0;
     }
 
     private boolean checkLine(int line, int column, int number, int[][] area) {

@@ -7,7 +7,7 @@ public class Difficulty {
     private boolean difficultyLevelIsGoodChoice;
 
     private void difficulty() {
-        String difficultyChecker = "How difficulty of game do You want?  \n   VE - Very easy\n   E - easy, \n   M - medium \n   H - hard " +
+        String difficultyChecker = "How difficulty game do you want?  \n   VE - very easy\n   E - easy \n   M - medium \n   H - hard " +
                 "\n   VH - very hard";
 
         System.out.println(difficultyChecker);
@@ -28,6 +28,7 @@ public class Difficulty {
             case "ve":
                 difficultyLevel = 44;
                 difficultyLevelIsGoodChoice = true;
+                break;
             case "e":
                 difficultyLevel = 37;
                 difficultyLevelIsGoodChoice = true;

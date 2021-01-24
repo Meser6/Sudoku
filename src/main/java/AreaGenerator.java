@@ -4,7 +4,7 @@ public class AreaGenerator {
 
 
     public static void areaGenerator(int difficultyLevel, int[][] area) {
-        // TODO petla wykonuje ruch w przypadku gdy bedzie probowala wrzucic do zajetego pola
+        // TODO https://tipy.interia.pl/artykul_3139,jak-zrobic-sudoku.html
         Random random = new Random();
         ErrorChecker errorChecker = new ErrorChecker();
 
@@ -12,7 +12,7 @@ public class AreaGenerator {
         int randomColumn;
         int randomNumber;
 
-        for (int i = 0; i < difficultyLevel + 1; i++) {
+        for (int i = 0; i < difficultyLevel; i++) {
             while (!errorChecker.isEverythingIsGoodInAreasGenerator) {
                 randomLine = random.nextInt(9);
                 randomColumn = random.nextInt(9);
